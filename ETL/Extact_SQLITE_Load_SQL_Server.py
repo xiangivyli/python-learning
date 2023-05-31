@@ -65,7 +65,9 @@ for table_name, table_data in table_data.items():
 
     # Insert data into the table
     insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?'] * len(column_names))})"
-    cursor_sqlserver.executemany(insert_query, cursor.execute(f"SELECT * FROM {table_name}").fetchall())
+    data_rows = cursor.execute(f"SELECT * FROM {table_name}").fetchall()
+
+    cursor_sqlserver.executemany(insert_query, data_rows)
 
 # Step 4: Commit and close connections
 
