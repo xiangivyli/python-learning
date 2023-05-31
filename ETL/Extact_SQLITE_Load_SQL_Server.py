@@ -34,8 +34,6 @@ for table_name in table_names:
         'column_datatypes': column_datatypes
     }
 
-# Close the SQLite connection
-conn.close()
 
 # Step 2: Connect to SQL Server
 
@@ -70,6 +68,9 @@ for table_name, table_data in table_data.items():
     cursor_sqlserver.executemany(insert_query, cursor.execute(f"SELECT * FROM {table_name}").fetchall())
 
 # Step 4: Commit and close connections
+
+# Close the SQLite connection
+conn.close()
 
 # Commit and close SQL Server connection
 conn_sqlserver.commit()
