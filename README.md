@@ -1,7 +1,6 @@
 # python-learning
 Practice Python in this repository
 
-# Codewars
 ### Data Structures
 #### String
 - String Compression
