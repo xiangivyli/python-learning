@@ -1,6 +1,12 @@
 # python-learning
 Practice Python in this repository
 
+## Table of Contents
+- [Data Structure](#data-structure)
+- [Algorithms](#algorithms)
+- [String Manipulation](#string-manipulation)
+- [Dictionary Manipulation](#dictionary-manipulation)
+- 
 ### Data Structures
 #### String
 - String Compression
@@ -16,10 +22,6 @@ Practice Python in this repository
 ### Algorithms
 #### Sorting
 #### Search
-
-## Table of Contents
-- [String Manipulation](#string-manipulation)
-- [Dictionary Manipulation](#dictionary-manipulation)
 
 ### String Manipulation
 #### `count` 
