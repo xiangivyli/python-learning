@@ -1,33 +1,28 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
         
         # using set for O(1) lookup
         num_set = set(nums)
 
-        if len(num_set) == 1:
-            return 1
+        # initialise a longest length
+        longest_length = 0
 
-        # initialise a longest streak
-        longest_streak = 0
-
-        # randomly choose a num and find the smallest 
+        # randomly choose a num and find the start point
         for num in num_set:
-            if num - 1 in num_set: # until not find 
-                current_num = num 
-                current_streak = 2
+            if (num - 1) not in num_set: # until find 
+                current_length = 1
 
-                while current_num + 1 in num_set:
-                    current_num += 1
-                    current_streak += 1
+                while (num + current_length) in num_set:
+                    current_length += 1
 
                 # compare the streak 
-                longest_streak = max(longest_streak, current_streak)
+                longest_length = max(longest_length, current_length)
 
-        return longest_streak
+        return longest_length
 
 # key1: set can hold elements
-# key2: using in to find num-1 and num+1
+# key2: using in to find num-1 and num+length
+# key3: when num-1 in this set, num+length in set, iterate 
 # time complexity: O(n)
 # space complexity: O(n)
+        
